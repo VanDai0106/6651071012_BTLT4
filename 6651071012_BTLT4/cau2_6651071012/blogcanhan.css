@@ -1,0 +1,687 @@
+
+/* =========================================
+   1. CÀI ĐẶT CHUNG
+   ========================================= */
+
+/* Universal selector */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+    color: #333;
+    background: #f7f9fc;
+}
+
+/* Group selector */
+h1,
+h2,
+h3 {
+    line-height: 1.3;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================================
+   2. HEADER
+   ========================================= */
+
+/* Tag selector */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 8%;
+
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Logo */
+.logo {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: linear-gradient(135deg, #667eea, #764ba2);
+
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.35);
+}
+
+/* Child selector */
+nav > ul {
+    display: flex;
+    gap: 30px;
+
+    list-style: none;
+}
+
+/* Descendant selector */
+nav ul li a {
+    position: relative;
+
+    color: #333;
+    font-weight: 600;
+
+    transition: color 0.3s ease;
+}
+
+/* Pseudo-class */
+nav ul li a:hover {
+    color: #667eea;
+}
+
+/* Pseudo-element */
+nav ul li a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: linear-gradient(90deg, #667eea, #764ba2);
+
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================
+   3. HERO
+   ========================================= */
+
+.hero {
+    min-height: 90vh;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 60px;
+
+    padding: 80px 10%;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(102, 126, 234, 0.95),
+            rgba(118, 75, 162, 0.95)
+        ),
+        url("../images/banner.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+/* Hero text */
+.hero > div {
+    max-width: 600px;
+    color: white;
+}
+
+.hero p:first-child {
+    margin-bottom: 10px;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    margin-bottom: 15px;
+
+    font-size: 52px;
+    color: white;
+}
+
+.hero h2 {
+    margin-bottom: 20px;
+
+    font-size: 25px;
+    color: #e0e7ff;
+}
+
+.hero p {
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+
+/* Hero image */
+.hero img {
+    width: 280px;
+    height: 280px;
+
+    object-fit: cover;
+
+    border: 7px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.3);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.hero img:hover {
+    transform: scale(1.05) rotate(2deg);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+
+/* =========================================
+   4. BUTTON
+   ========================================= */
+
+.btn {
+    display: inline-block;
+
+    margin: 8px 5px 0 0;
+    padding: 12px 25px;
+
+    border: 2px solid white;
+    border-radius: 30px;
+
+    color: white;
+    font-weight: bold;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+
+    background: white;
+    color: #667eea;
+}
+
+
+/* =========================================
+   5. SECTION CHUNG
+   ========================================= */
+
+.section {
+    padding: 80px 10%;
+
+    background: white;
+}
+
+.section:nth-child(even) {
+    background: #f7f9fc;
+}
+
+.section > h2 {
+    position: relative;
+
+    margin-bottom: 45px;
+
+    text-align: center;
+    font-size: 34px;
+    color: #222;
+}
+
+/* Pseudo-element */
+.section > h2::after {
+    content: "";
+
+    display: block;
+
+    width: 60px;
+    height: 4px;
+
+    margin: 12px auto 0;
+
+    border-radius: 5px;
+
+    background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+
+/* =========================================
+   6. GIỚI THIỆU
+   ========================================= */
+
+#about p {
+    max-width: 850px;
+
+    margin: 0 auto 15px;
+
+    text-align: center;
+
+    font-size: 17px;
+    color: #555;
+}
+
+#about strong {
+    color: #667eea;
+}
+
+#about em {
+    color: #764ba2;
+}
+
+
+/* =========================================
+   7. SKILLS
+   ========================================= */
+
+.skills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 15px;
+}
+
+.skills span {
+    padding: 12px 25px;
+
+    border: 1px solid #e0e4f0;
+    border-radius: 30px;
+
+    background: white;
+
+    color: #555;
+    font-weight: bold;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.skills span:hover {
+    transform: translateY(-6px) scale(1.05);
+
+    background: linear-gradient(135deg, #667eea, #764ba2);
+
+    color: white;
+
+    box-shadow:
+        0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+
+/* =========================================
+   8. PROJECT
+   ========================================= */
+
+.projects {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+}
+
+.card {
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background: white;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+    display: block;
+
+    width: 100%;
+    height: 230px;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+.card h3 {
+    padding: 20px 20px 5px;
+
+    font-size: 22px;
+    color: #222;
+}
+
+.card p {
+    padding: 0 20px 15px;
+
+    color: #666;
+}
+
+.card a {
+    display: inline-block;
+
+    margin: 0 20px 25px;
+
+    color: #667eea;
+    font-weight: bold;
+
+    transition: color 0.3s ease;
+}
+
+.card a:hover {
+    color: #764ba2;
+}
+
+
+/* =========================================
+   9. TIMELINE
+   ========================================= */
+
+.timeline {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.timeline div {
+    position: relative;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    background: white;
+
+    border-left: 5px solid #667eea;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.07);
+
+    transition: transform 0.3s ease;
+}
+
+.timeline div:hover {
+    transform: translateY(-8px);
+}
+
+.timeline h3 {
+    margin-bottom: 10px;
+
+    color: #667eea;
+    font-size: 24px;
+}
+
+.timeline p {
+    color: #666;
+}
+
+
+/* =========================================
+   10. BLOG + ASIDE
+   ========================================= */
+
+.blog {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr;
+
+    gap: 40px;
+}
+
+.blog article {
+    margin-bottom: 25px;
+    padding: 25px;
+
+    border-radius: 15px;
+
+    background: white;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.06);
+
+    transition: transform 0.3s ease;
+}
+
+.blog article:hover {
+    transform: translateX(8px);
+}
+
+.blog article h3 {
+    margin-bottom: 10px;
+
+    color: #667eea;
+}
+
+.blog article p {
+    color: #666;
+}
+
+
+/* =========================================
+   11. ASIDE
+   ========================================= */
+
+aside {
+    padding: 30px;
+
+    border: 8px solid transparent;
+    border-radius: 15px;
+
+    background:
+        linear-gradient(white, white) padding-box,
+        linear-gradient(135deg, #667eea, #764ba2) border-box;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+aside h3 {
+    margin-bottom: 20px;
+
+    color: #667eea;
+}
+
+aside ul {
+    list-style: none;
+}
+
+aside li {
+    padding: 12px 0;
+
+    border-bottom: 1px solid #eee;
+
+    color: #555;
+}
+
+aside li::before {
+    content: "→ ";
+
+    color: #667eea;
+    font-weight: bold;
+}
+
+
+/* =========================================
+   12. FOOTER
+   Multiple background images
+   ========================================= */
+
+footer {
+    position: relative;
+
+    padding: 70px 10%;
+
+    text-align: center;
+
+    color: white;
+
+    background-image:
+        url("../images/pattern.png"),
+        linear-gradient(135deg, #1e1e2f, #302b63);
+
+    background-size:
+        180px,
+        cover;
+
+    background-position:
+        center,
+        center;
+
+    background-origin: padding-box;
+    background-clip: padding-box;
+}
+
+footer h2 {
+    margin-bottom: 20px;
+
+    font-size: 30px;
+}
+
+footer p {
+    margin: 8px 0;
+
+    color: #ddd;
+}
+
+.top {
+    display: inline-block;
+
+    margin-top: 25px;
+    padding: 10px 20px;
+
+    border-radius: 25px;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    color: white;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.top:hover {
+    transform: translateY(-5px);
+
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+/* =========================================
+   13. RESPONSIVE
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    header {
+        padding: 15px 5%;
+    }
+
+    .hero {
+        padding: 60px 5%;
+    }
+
+    .section {
+        padding: 60px 5%;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    header {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    nav > ul {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+    .hero {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .hero img {
+        width: 220px;
+        height: 220px;
+    }
+
+    .blog {
+        grid-template-columns: 1fr;
+    }
+
+    .section > h2 {
+        font-size: 28px;
+    }
+}
+
